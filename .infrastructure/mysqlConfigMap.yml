@@ -6,4 +6,6 @@ metadata:
   labels:
     app: mysql
 data:
-  init.sql: "GRANT ALL PRIVILEGES ON app_db.* TO 'app_user'@'%';"
+  init.sql: |
+    CREATE DATABASE IF NOT EXISTS app_db;
+    GRANT ALL PRIVILEGES ON app_db.* TO 'app_user'@'%';
