@@ -1,5 +1,6 @@
 #!/bin/bash
 
+kind create cluster --config cluster.yml
 kubectl create ns mysql
 kubectl apply -f .infrastructure/mysqlSecrets.yml
 kubectl apply -f .infrastructure/mysqlConfigMap.yml

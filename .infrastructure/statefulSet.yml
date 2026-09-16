@@ -36,10 +36,11 @@ spec:
               value: app_db
           volumeMounts:
             - name: data
-              mountPath: /var/lid/mysql
+              mountPath: /var/lib/mysql
               subPath: mysql
             - name: config-map
-              mountPath: /docker-entrypoint-initdb.d
+              mountPath: /docker-entrypoint-initdb.d/init.sql
+              subPath: init.sql
           ports:
             - name: mysql
               containerPort: 3306
